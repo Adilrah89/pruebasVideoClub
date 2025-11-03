@@ -1,1 +1,1 @@
-Trabajo Front responsive 
+Trabajo Front responsive, sobre un videoClub 
