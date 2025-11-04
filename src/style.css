@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+h1 {
+  color: #333333;
+  text-align: center;
+}
+
+#status-message {
+  text-align: center;
+  color: #888888;
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: #ffffff;
+}
