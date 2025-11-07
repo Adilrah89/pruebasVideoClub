@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Películas (Mock)</title>
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViajesPelis - Destinos de Rodaje</title>
 
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>🎬 Listado de Películas</h1>
-        
-        <p id="status-message">Cargando datos (mock)...</p>
+      <div class="header-logo-container">
+        <img
+          src="logo/logotitulo.svg"
+          alt="Logo ViajesPelis"
+          class="main-logo"
+          loading="lazy"
+        />
+      </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID Película</th>
-                    <th>Título</th>
-                    <th>Año Estreno</th>
-                    <th>Duración (min)</th>
-                    <th>Clasificación</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                </tbody>
-        </table>
+      <p id="status-message">Cargando destinos...</p>
+
+      <nav class="peliculas-nav" id="peliculas-nav"></nav>
+
+      <section id="destino-display" class="destino-display-container"></section>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="script.js" type="module"></script>
+  </body>
 </html>
