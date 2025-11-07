@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViajesPelis - Destinos de Rodaje</title>
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>🎬 ViajesPelis: Destinos de Rodaje</h1>
-        
-        <p id="status-message">Cargando destinos (mock)...</p>
+      <div class="header-logo-container">
+        <img
+          src="logo/logotitulo.svg"
+          alt="Logo ViajesPelis"
+          class="main-logo"
+          loading="lazy"
+        />
+      </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Película</th>
-                    <th>Destino</th>
-                    <th>País</th>
-                    <th>Año Rodaje</th>
-                    <th>Ver</th> 
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                </tbody>
-        </table>
+      <p id="status-message">Cargando destinos...</p>
 
-        <hr>
+      <nav class="peliculas-nav" id="peliculas-nav"></nav>
 
-        <h2>Galería de Destinos</h2>
-
-        <div class="swiper-container" id="viajes-carousel">
-            <div class="swiper-wrapper">
-                </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-
+      <section id="destino-display" class="destino-display-container"></section>
     </div>
 
-    <script src="script.js" type="module"></script> </body>
+    <script src="script.js" type="module"></script>
+  </body>
 </html>
