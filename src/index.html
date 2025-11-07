@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Películas (Mock)</title>
+    <title>ViajesPelis - Destinos de Rodaje</title>
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>🎬 Listado de Películas</h1>
+        <h1>🎬 ViajesPelis: Destinos de Rodaje</h1>
         
-        <p id="status-message">Cargando datos (mock)...</p>
+        <p id="status-message">Cargando destinos (mock)...</p>
 
         <table>
             <thead>
                 <tr>
-                    <th>ID Película</th>
-                    <th>Título</th>
-                    <th>Año Estreno</th>
-                    <th>Duración (min)</th>
-                    <th>Clasificación</th>
+                    <th>Película</th>
+                    <th>Destino</th>
+                    <th>País</th>
+                    <th>Año Rodaje</th>
+                    <th>Ver</th> 
                 </tr>
             </thead>
             <tbody id="table-body">
                 </tbody>
         </table>
+
+        <hr>
+
+        <h2>Galería de Destinos</h2>
+
+        <div class="swiper-container" id="viajes-carousel">
+            <div class="swiper-wrapper">
+                </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="script.js" type="module"></script> </body>
 </html>
