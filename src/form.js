@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const peliculaInput = document.getElementById("pelicula");
       const peliculaNombre = peliculaInput.value || "la película";
 
-      statusMessage.textContent = "Simulando subida... por favor espera.";
+      statusMessage.textContent = "Simulando la subida... por favor espere.";
       statusMessage.className = "";
       statusMessage.style.display = "block";
 
