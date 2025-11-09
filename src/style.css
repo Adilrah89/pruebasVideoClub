@@ -32,11 +32,6 @@ h3 {
   transform: translateY(-3px);
 }
 
-@media (max-width: 620px) {
-  .main-logo {
-    max-width: 300px;
-  }
-}
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -82,6 +77,15 @@ h3 {
   background-color: #0d6efd;
   color: #fff;
 }
+
+.peliculas-nav a.link-especial {
+  background-color: #198754;
+  color: #fff;
+}
+.peliculas-nav a.link-especial:hover {
+  background-color: #157347;
+}
+
 .destino-display-container {
   display: grid;
   grid-template-columns: 40% 1fr;
@@ -150,8 +154,153 @@ h3 {
   aspect-ratio: 16 / 9;
   max-height: 250px;
 }
+
+.form-container {
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.form-grupo {
+  margin-bottom: 18px;
+}
+
+.form-grupo label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="number"],
+.form-grupo input[type="file"],
+.form-grupo textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-grupo textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-grupo input[type="file"] {
+  padding: 5px;
+  background: #f9f9f9;
+}
+
+.form-submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-submit-btn:hover {
+  background-color: #0a58ca;
+}
+
+#status-message {
+  padding: 10px;
+  background: #fff8e1;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  display: none;
+}
+
+#status-message.success {
+  background: #e6fffa;
+  color: #004d40;
+}
+#status-message.error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.hero-image-container {
+  width: 100%;
+  margin-bottom: 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  margin-top: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 @media (max-width: 860px) {
   .destino-display-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .main-logo {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .peliculas-nav a {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .peliculas-nav a + a {
+    border-left: none;
+  }
+
+  .destino-texto h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-container {
+    padding: 20px 15px;
   }
 }

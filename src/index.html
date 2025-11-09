@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViajesPelis - Destinos de Rodaje</title>
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -18,13 +17,22 @@
         />
       </div>
 
-      <p id="status-message">Cargando destinos...</p>
+      <nav class="peliculas-nav" id="peliculas-nav">
+        <a href="matrix.html">The Matrix</a>
+        <a href="lotr.html">El Señor de los Anillos</a>
+        <a href="interstellar.html">Interstellar</a>
+        <a href="got.html">Juego de Tronos (Serie)</a>
+        <a href="formulario.html" class="link-especial">Añadir Película</a>
+      </nav>
 
-      <nav class="peliculas-nav" id="peliculas-nav"></nav>
-
-      <section id="destino-display" class="destino-display-container"></section>
+      <div class="hero-image-container">
+        <img
+          src="imagenes/imagenppal.png"
+          alt="Descubre destinos de película"
+          class="hero-image"
+          loading="lazy"
+        />
+      </div>
     </div>
-
-    <script src="script.js" type="module"></script>
   </body>
 </html>

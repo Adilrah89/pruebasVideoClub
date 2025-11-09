@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViajesPelis - Añadir Destino</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-logo-container">
+        <img
+          src="logo/logotitulo.svg"
+          alt="Logo ViajesPelis"
+          class="main-logo"
+          loading="lazy"
+        />
+      </div>
+
+      <nav class="peliculas-nav">
+        <a href="index.html" class="active">Volver al menú</a>
+      </nav>
+
+      <section class="form-container">
+        <h2>Añadir Nuevo Destino</h2>
+
+        <form id="form-pelicula">
+          <div class="form-grupo">
+            <label for="pelicula">Película</label>
+            <input type="text" id="pelicula" name="pelicula" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="destino">Destino</label>
+            <input type="text" id="destino" name="destino" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="pais">País</label>
+            <input type="text" id="pais" name="pais" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="ano">Año de Rodaje</label>
+            <input type="number" id="ano" name="ano" min="1900" max="2099" />
+          </div>
+
+          <div class="form-grupo">
+            <label for="ubicacion">Ubicación Exacta</label>
+            <input type="text" id="ubicacion" name="ubicacion" />
+          </div>
+
+          <div class="form-grupo">
+            <label for="texto">Texto Explicativo</label>
+            <textarea id="texto" name="texto" rows="5"></textarea>
+          </div>
+
+          <div class="form-grupo">
+            <label for="img-principal">Imagen Principal</label>
+            <input
+              type="file"
+              id="img-principal"
+              name="img-principal"
+              accept="image/*"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="galeria">Galería (múltiples)</label>
+            <input
+              type="file"
+              id="galeria"
+              name="galeria"
+              accept="image/*"
+              multiple
+            />
+          </div>
+
+          <button type="submit" class="form-submit-btn">
+            Simular Subida
+          </button>
+        </form>
+
+        <p id="status-message"></p>
+      </section>
+    </div>
+
+    <script src="form.js"></script>
+  </body>
+</html>
