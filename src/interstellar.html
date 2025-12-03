@@ -7,16 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container" id="main-content">
       <div class="header-logo-container">
-        <p>
-          La planificación incluyó estudios meteorológicos diarios para
-          anticipar cambios bruscos en el glaciar y ajustar las horas de
-          iluminación. Parte del equipo técnico recibió formación básica en
-          seguridad sobre hielo y rescate, reduciendo riesgos durante el
-          transporte del material pesado. El resultado es una atmósfera que
-          transmite vulnerabilidad humana frente a un entorno inmenso.
-        </p>
         <img
           src="logo/logotitulo.svg"
           alt="Logo ViajesPelis"
@@ -32,12 +26,12 @@
       <section id="destino-display" class="destino-display-container loaded">
         <div class="destino-gallery-left">
           <img
-            src="imagenes/interstellar-islandia.jpg"
+            src="imagenes/optimizadas/interstellar-islandia.webp"
             alt="Svínafellsjökull - Imagen Principal"
             class="destino-img"
           />
           <img
-            src="imagenes/interstellar-glaciar1jpg.jpg"
+            src="imagenes/optimizadas/interstellar-glaciar1jpg.webp"
             alt="Svínafellsjökull - Detalle 1"
             class="destino-img"
           />
@@ -67,6 +61,16 @@
               construidos y ayudó a mantener la escala épica que buscaba la
               historia.
             </p>
+            
+            <p>
+              La planificación incluyó estudios meteorológicos diarios para
+              anticipar cambios bruscos en el glaciar y ajustar las horas de
+              iluminación. Parte del equipo técnico recibió formación básica en
+              seguridad sobre hielo y rescate, reduciendo riesgos durante el
+              transporte del material pesado. El resultado es una atmósfera que
+              transmite vulnerabilidad humana frente a un entorno inmenso.
+            </p>
+
             <p>
               <strong>Ubicación:</strong> Glaciar Svínafellsjökull (Parque P.
               Skaftafell)
@@ -81,13 +85,16 @@
               ></iframe>
             </div>
           </div>
+          
           <img
-            src="imagenes/interstellar-glaciar2.jpg"
+            src="imagenes/optimizadas/interstellar-glaciar2.webp"
             alt="Svínafellsjökull - Detalle 2"
             class="destino-img"
           />
         </div>
       </section>
     </div>
+
+    <script src="./scripts/lightbox.js" defer></script>
   </body>
 </html>
