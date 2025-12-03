@@ -6,6 +6,25 @@ body {
   font-family: system-ui, Arial, sans-serif;
   background: #f4f6f8;
   color: #222;
+  position: relative;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #0d6efd;
+  color: white;
+  padding: 12px 20px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0 0 8px 0;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 h1,
@@ -86,6 +105,58 @@ h3 {
   background-color: #157347;
 }
 
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.icono-animado-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.icono-claqueta {
+  animation: balanceo 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes balanceo {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.svg-caption {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.hero-image-container {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.creative-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.25));
+  width: 100%;
+  height: auto;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px; 
+}
+
 .destino-display-container {
   display: grid;
   grid-template-columns: 40% 1fr;
@@ -147,6 +218,13 @@ h3 {
 .destino-img:hover {
   transform: scale(1.03);
 }
+
+.destino-gallery-left picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .destino-gallery-left .destino-img {
   aspect-ratio: 16 / 10;
 }
@@ -237,25 +315,10 @@ h3 {
   color: #c62828;
 }
 
-.hero-image-container {
-  width: 100%;
-  margin-bottom: 28px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
 .video-responsive {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   margin-top: 16px;
   border-radius: 12px;
   overflow: hidden;
@@ -303,4 +366,78 @@ h3 {
   .form-container {
     padding: 20px 15px;
   }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content-wrapper {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lightbox-caption {
+  color: #fff;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3.5rem;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 0.5;
+  transition: transform 0.2s, color 0.2s;
+  padding: 10px;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1) rotate(90deg);
+  color: #ff6b6b;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
