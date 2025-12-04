@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container" id="main-content">
       <div class="header-logo-container">
         <img
           src="logo/logotitulo.svg"
@@ -23,13 +25,24 @@
 
       <section id="destino-display" class="destino-display-container loaded">
         <div class="destino-gallery-left">
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="imagenes/optimizadas/hobbiton-detalle1.webp"
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="imagenes/optimizadas/hobbiton-nueva-zelanda.webp"
+            />
+            <img
+              src="imagenes/optimizadas/hobbiton-nueva-zelanda.webp"
+              alt="Matamata - Imagen Principal"
+              class="destino-img"
+            />
+          </picture>
+
           <img
-            src="imagenes/hobbiton-nueva-zelanda.jpg"
-            alt="Matamata - Imagen Principal"
-            class="destino-img"
-          />
-          <img
-            src="imagenes/hobbiton-detalle1.jpg"
+            src="imagenes/optimizadas/hobbiton-detalle1.webp"
             alt="Matamata - Detalle 1"
             class="destino-img"
           />
@@ -78,12 +91,15 @@
             </div>
           </div>
           <img
-            src="imagenes/hobbiton-detalle2.jpg"
+            src="imagenes/optimizadas/hobbiton-detalle2.webp"
             alt="Matamata - Detalle 2"
             class="destino-img"
           />
         </div>
       </section>
     </div>
+
+    <script src="./scripts/lightbox.js" defer></script>
+    <script src="./scripts/darkmode.js" defer></script>
   </body>
 </html>
