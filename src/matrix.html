@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container" id="main-content">
       <div class="header-logo-container">
         <img
           src="logo/logotitulo.svg"
@@ -24,12 +26,12 @@
       <section id="destino-display" class="destino-display-container loaded">
         <div class="destino-gallery-left">
           <img
-            src="imagenes/matrix-sydney.jpg"
+            src="imagenes/optimizadas/matrix-sydney.webp"
             alt="Sídney - Imagen Principal"
             class="destino-img"
           />
           <img
-            src="imagenes/matrix-fuente.jpg"
+            src="imagenes/optimizadas/matrix-fuente.webp"
             alt="Sídney - Detalle 1"
             class="destino-img"
           />
@@ -82,12 +84,15 @@
             </div>
           </div>
           <img
-            src="imagenes/matrix-calle.jpg"
+            src="imagenes/optimizadas/matrix-calle.webp"
             alt="Sídney - Detalle 2"
             class="destino-img"
           />
         </div>
       </section>
     </div>
+
+    <script src="./scripts/lightbox.js" defer></script>
+    <script src="./scripts/darkmode.js" defer></script>
   </body>
 </html>

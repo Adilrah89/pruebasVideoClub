@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="container" id="main-content">
       <div class="header-logo-container">
         <img
           src="logo/logotitulo.svg"
@@ -76,9 +78,7 @@
             />
           </div>
 
-          <button type="submit" class="form-submit-btn">
-            Simular Subida
-          </button>
+          <button type="submit" class="form-submit-btn">Simular Subida</button>
         </form>
 
         <p id="status-message"></p>
@@ -86,5 +86,7 @@
     </div>
 
     <script src="form.js"></script>
+    <script src="./scripts/lightbox.js" defer></script>
+    <script src="./scripts/darkmode.js" defer></script>
   </body>
 </html>
