@@ -344,6 +344,15 @@ h3 {
   border: 0;
 }
 
+.link-creditos {
+  background-color: #6c757d;  
+  color: white !important;
+}
+
+.link-creditos:hover {
+  background-color: #5a6268;
+}
+
 @media (max-width: 860px) {
   .destino-display-container {
     grid-template-columns: 1fr;

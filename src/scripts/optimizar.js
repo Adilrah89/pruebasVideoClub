@@ -2,47 +2,48 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
-const inputFolder = "src/imagenes";
-const outputFolder = "src/imagenes/optimizadas";
+// Usamos __dirname para evitar problemas de rutas
+const inputFolder = path.join(__dirname, "../imagenes");
+const outputFolder = path.join(__dirname, "../imagenes/optimizadas");
+
+// Definimos los anchos que queremos generar para "Resolution Switching"
+const SIZES = [400, 800, 1200];
 const QUALITY = 80;
 
 if (!fs.existsSync(outputFolder)) {
   fs.mkdirSync(outputFolder, { recursive: true });
 }
 
-console.log("Procesando imágenes...");
-console.log(
-  "| Nombre Imagen | Formato Antiguo | Formato Nuevo | Peso Original (KB) | Peso Nuevo (KB) | Mejora (%) |"
-);
-console.log("|---|---|---|---|---|---|");
+console.log(`📍 Buscando imágenes en: ${inputFolder}`);
 
 fs.readdir(inputFolder, (err, files) => {
   if (err) throw err;
 
   files.forEach((file) => {
-    const inputFile = path.join(inputFolder, file);
-
+    // Solo procesamos jpg y png
     if (!file.match(/\.(jpg|jpeg|png)$/i)) return;
 
+    const inputFile = path.join(inputFolder, file);
     const fileName = path.parse(file).name;
-    const outputFile = path.join(outputFolder, `${fileName}.webp`);
 
-    const stats = fs.statSync(inputFile);
-    const originalSizeKB = (stats.size / 1024).toFixed(2);
-
+    // 1. Generando la versión original optimizada
     sharp(inputFile)
       .webp({ quality: QUALITY })
-      .toFile(outputFile)
-      .then((info) => {
-        const newSizeKB = (info.size / 1024).toFixed(2);
-        const improvement = ((1 - info.size / stats.size) * 100).toFixed(2);
+      .toFile(path.join(outputFolder, `${fileName}.webp`))
+      .catch((err) => console.error(`Error original ${file}:`, err));
 
-        console.log(
-          `| ${file} | ${path.extname(
-            file
-          )} | .webp | ${originalSizeKB} | ${newSizeKB} | ${improvement}% |`
-        );
-      })
-      .catch((err) => console.error(`❌ Error en ${file}:`, err));
+    // 2. Generando las versiones redimensionadas (BUCLE NUEVO)
+    SIZES.forEach((width) => {
+      const outputFile = path.join(outputFolder, `${fileName}-${width}.webp`);
+
+      sharp(inputFile)
+        .resize({ width: width, withoutEnlargement: true })
+        .webp({ quality: QUALITY })
+        .toFile(outputFile)
+        .then(() => {
+          console.log(`✅ Generado: ${fileName}-${width}.webp`);
+        })
+        .catch((err) => console.error(`❌ Error ${file} (${width}px):`, err));
+    });
   });
 });
