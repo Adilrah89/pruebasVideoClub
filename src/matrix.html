@@ -15,7 +15,8 @@
           src="logo/logotitulo.svg"
           alt="Logo ViajesPelis"
           class="main-logo"
-          loading="lazy"
+          width="300"
+          height="100"
         />
       </div>
 
@@ -28,20 +29,24 @@
           <img
             src="imagenes/optimizadas/matrix-sydney-800.webp"
             srcset="
-              imagenes/optimizadas/matrix-sydney-400.webp 400w,
-              imagenes/optimizadas/matrix-sydney-800.webp 800w,
+              imagenes/optimizadas/matrix-sydney-400.webp   400w,
+              imagenes/optimizadas/matrix-sydney-800.webp   800w,
               imagenes/optimizadas/matrix-sydney-1200.webp 1200w
             "
             sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 800px"
             alt="Sídney - Imagen Principal"
             class="destino-img"
-            loading="lazy"
+            fetchpriority="high"
+            width="800"
+            height="500"
           />
           <img
             src="imagenes/optimizadas/matrix-fuente.webp"
             alt="Sídney - Detalle 1"
             class="destino-img"
             loading="lazy"
+            width="800"
+            height="500"
           />
         </div>
 
@@ -96,6 +101,8 @@
             alt="Sídney - Detalle 2"
             class="destino-img"
             loading="lazy"
+            width="800"
+            height="450"
           />
         </div>
       </section>
